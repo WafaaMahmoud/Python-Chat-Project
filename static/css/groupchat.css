@@ -1,3 +1,4 @@
+
 #headChat{
     
     height:50px;
@@ -10,11 +11,23 @@
 #convType{
     float: left;
     margin-left:2%;
+    margin-top: 2%;
+    
 
 }
-#chatType{
-    color:#46546b;
+
+#convType a{
+   
     font-size: 120%;
+    color:#44094c;
+    text-decoration: none;
+
+}
+#convType a:hover{
+   
+    font-size: 120%;
+    color:#f7ab38;
+    text-decoration: none;
 
 }
 #user{
@@ -28,7 +41,7 @@
 }
 #userName{
     
-    color:#46546b;
+    color:#44094c;
     font-size: 120%;
     position: relative;
 
@@ -47,6 +60,10 @@
     margin-top:2%;
     margin-right:4%; 
     float:right;
+    color:#44094c;
+    text-decoration: none;
+}
+#groupInfo a:hover{
     color:#f7ab38;
     text-decoration: none;
 }
@@ -58,7 +75,7 @@
     margin-left:4%;
 }
 #gpName{
-    color:#46546b;
+    color:#44094c;
     font-size: 120%;
     margin-left:4%;
 }
@@ -82,6 +99,18 @@
     position:relative;
     border-radius: 10px;
 }
+#chatContent{
+    margin-top:2%; 
+    margin-left: 2%;
+    width:65%;
+    height: 90%;
+    border: 2px solid #f9f8f4;
+    background-color: #f9f8f4;
+    border-radius: 10px;
+    font-size: 18px;
+    color:#44094c;
+
+}
 #onlineContacts{
     top:5%;
     right:3%;
@@ -99,7 +128,7 @@
 #textInput{
    
     position: relative;
-    margin-top: 3%;
+    margin-top: 1.5%;
     left:3%;
     height:15%;
     background:white;
@@ -107,6 +136,20 @@
     width:90%;
     border-radius: 10px;
     
+}
+#chatInput{
+    margin-top:0.5%; 
+    margin-left: 2%;
+    width:80%;
+    height: 90%;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 18px;
+    color:#44094c;
+}
+#chatInput:focus{
+  border-radius: 10px;
+  outline:none;
 }
 #send{
     background-color: #963c9b;
@@ -125,6 +168,6 @@
     border-radius: 10px;
 }
 #onConts{
-    color:#46546b;
+    color:#44094c;
     font-size: 18px;
 }
