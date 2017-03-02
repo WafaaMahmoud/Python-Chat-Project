@@ -3,7 +3,7 @@
     
     height:12%;
     background:#F0F0F0;
-    border: 2px solid #963c9b;
+    border: 5px solid #963c9b;
     width:98%;
     border-radius: 10px;
    
@@ -61,7 +61,7 @@
 #myfriends,#myAllfriends{
     padding-top: 5%;
     background:#f9f8f4;
-    border: 2px solid #963c9b;
+    border: 5px solid #963c9b;
     width:98%;
     height:25%;
     border-radius: 10px;
