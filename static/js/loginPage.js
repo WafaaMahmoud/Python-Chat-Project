@@ -1,3 +1,25 @@
+var webSocket;
+$(function(){
+	webSocket= new WebSocket("ws://localhost:8888/ws");
+	webSocket.onmessage = function(e){
+		var msg=e.data;
+		console.log(msg);
+		//if(msg==="no")
+		$("#error").append("<p>"+msg+"</p>");
+		//else
+		//	$("#error").append("<p>successful login"+msg+"</p>");
+	}
+	// webSocket.onclose = function(e){
+	// 	// console.log(e);
+	// }
+	$('#log').click(function(e){
+		var msg = $("#username").val()+":"+$("#pwd").val()
+		webSocket.send(msg)
+		//$("#message").val('')
+	})
+})
+
+
 $('input[type="submit"]').mousedown(function(){
   $(this).css('background', '#963c9b');
 });
