@@ -18,10 +18,10 @@
         <div class="randompad">
            <fieldset>
              <label name="email">Email</label>
-             <input type="email" value="example@example.com" />
+             <input type="email" value="example@example.com" id="username"/>
              <label name="password">Password</label>
-             <input type="password" />
-             <input type="submit" value="Login" />
+             <input type="password" id="pwd"/>
+             <input type="submit" value="Login" id="log"/>
  
            </fieldset>
         </div>
@@ -58,7 +58,7 @@
     <img id="chatimg"src="../static/img/chatt.png">
     <!-- <h1> CHAT
     </h1> -->
-    
+    <div id="error"></div>
   </div>
 </div>
   <script src='../static/js/jquery-3.1.1.js'></script>
