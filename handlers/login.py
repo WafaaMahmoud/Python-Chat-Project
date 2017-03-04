@@ -25,7 +25,7 @@ class WSHandler(websocket.WebSocketHandler):
 				self.write_message("successfuly login")
 				db.user.update({"username":msg[0]},{ "$set":{"is_active":"true"}})
 				print("successfuly login")
-				self.render("../templates/people.html")
+				#self.render("../templates/people.html")
 				#for c in clients:u
 				#	c.write_message(p["name"]+" it is in the databse")
 			else:
