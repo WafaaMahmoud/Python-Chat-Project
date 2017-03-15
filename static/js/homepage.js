@@ -8,19 +8,38 @@ var index=0;
             successmessage = 'Data was succesfully captured';
            
             for (x in data[2]){
-
-                if(data[2][x].numberOfColors>count){
-                    //console.log(data[2][x].numberOfColors);
-                    count=data[2][x].numberOfColors;
-                    index=x;
-                }
+            $("#super").append("</br>"+data[2][x].username+"</br>");
 
 
             }
 
-            $("#party").append("</br>"+data[2][index].username+"</br>");
+            $('#super').attr('style','text-align:center; color:#7A3E48; font-weight:bold');
+            $('#super').css("font-size","100%");
+
+
+
+            for (x in data[3]){
+
+              
+            $("#party").append("</br>"+data[3][x].username+"</br>");
+
+
+            }
+
             $('#party').attr('style','text-align:center; color:#7A3E48; font-weight:bold');
-            $('#party').css("font-size","150%");
+            $('#party').css("font-size","100%");
+
+
+             for (x in data[4]){
+
+              
+            $("#chatty").append("</br>"+data[4][x]._id+"</br>");
+
+
+            }
+
+            $('#chatty').attr('style','text-align:center; color:#7A3E48; font-weight:bold');
+            $('#chatty').css("font-size","110%");
 
 
 
