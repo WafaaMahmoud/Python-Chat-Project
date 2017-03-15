@@ -3,47 +3,35 @@ from pymongo import MongoClient
 
 client = MongoClient()
 db = client['pro']
-jfile={}
-fs={}
-doha={}
-max_f={}
+mFriends=[]
+friends=[]
+friendsState={}
 
 class people(web.RequestHandler):
-
     def get(self):
         self.render("../templates/people.html")
+
     def post(self):
-        count1 = 0
-        count2=0
-        count3=0
-        cursor = db.user.find({},{'username':1,'_id':0})
-        for document in cursor:
-            #print(document)
-            jfile[count1]=document
-            count1 +=1
-        cursor1 = db.user.find({},{'friends':1,'_id':0})
-        for doc in cursor1:
-            #print(doc)
-            fs[count2]=doc
-            count2 +=1
-        doha[0]=fs
-        doha[1]=jfile
+        user="doha"
+        #user friends
+        myFriends=[]
+        notinfriends=[]
+        mFriends = db.user.find({'username':user},{'friends':1,'_id':0})
+        for doc in mFriends:
+            myFriends=doc['friends']
+        print(myFriends)
 
+        #all friends
+        friends = db.user.find({},{'username':1,'_id':0})
 
-       #db.user.find_one().sort({"friends:{$size}":-1}).limit(1).pretty()
-        #max_fr =db.user.aggregate([{ "$group":{"_id ": "$_username",{ "max_price": {"$max": "$friends:{$size}"}}}]).pretty()
-        #max_fr=db.user.aggregate([{"$group":{"_id": "$username","numberOfColors": {"$size": "$friends" }}}])
-        max_fr = db.user.aggregate([{"$project": {"username": 1,"_id":0 ,"numberOfColors": { "$size": "$friends"}}}])
-        for doc in max_fr:
-            print(doc)
-            max_f[count3]=doc
-            count3 +=1
-        doha[0] = fs
-        doha[1] = jfile
-        doha[2]=max_f
+        #user not in friends
+        for document in friends:
+            if document['username'] not in myFriends:
+                notinfriends.append(document['username'])
+        print(notinfriends)
 
-
-
-        print(doha)
-
-        self.write(doha)
+        friendsState[0]=notinfriends
+        friendsState[1]=myFriends
+        notinfriends=[]
+        #notinfriends=[]
+        self.write(friendsState)

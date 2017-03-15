@@ -20,7 +20,7 @@ app = web.Application([
         (r"/chat", ChatHandler),
         (r"/log", Login),
         (r"/signup", signup),
-        #(r"/people", people),
+        (r"/people", people),
         (r"/group", group),
         #("/homepage", homepage),
         (r"/ws", WSHandler)
