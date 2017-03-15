@@ -1,41 +1,54 @@
 from tornado import web,websocket
 import pymongo
+#import Cookie
 
 clients = []
+usname={}
 pr = []
 msg = []
 class WSHandler(websocket.WebSocketHandler):
+	owner= None
 	def open(self):
 		clients.append(self)
 		
 
 	def on_message(self,message):
-		client=pymongo.MongoClient()
-		db=client.pro
-		pr=db.user.find()
-		print(message)
-		msg=message.split(":")
-		print(msg[1])
-		print(pr)
+		print("open a soket")
+		owner=self.get_secure_cookie("uname")
+		print(self.get_secure_cookie("uname").decode("utf-8"))
+		for c in clients:
+			c.write_message(owner.decode("utf-8") +": "+message)
+
 		
-		#print(pr["name"])
-		for p in pr:
-			if (msg[0] == p["username"]) and (int(msg[1]) == p["password"]):
-				print("in for")
-				self.write_message("successfuly login")
-				db.user.update({"username":msg[0]},{ "$set":{"is_active":"true"}})
-				print("successfuly login")
-				#self.render("../templates/people.html")
-				#for c in clients:u
-				#	c.write_message(p["name"]+" it is in the databse")
-			else:
-				self.write_message("not valid id or password")
 			
 class ChatHandler(web.RequestHandler):
 	def get(self):
-		self.render("../templates/chat.html")
+		self.render("../templates/groupchat.html")
 
 class Login(web.RequestHandler):
-	"""docstring for Login"""
 	def get(self):
 		self.render("../templates/Loginpage.html")
+		
+	"""docstring for Login"""
+	def post(self):
+		
+		client=pymongo.MongoClient()
+		db=client.pro
+		pr=db.user.find()
+		uname=self.get_argument("username")
+		pwd=self.get_argument("pwd")
+		self.set_secure_cookie("uname", uname)
+		print(uname)
+		
+		#c = Cookie.SimpleCookie()
+		for p in pr:
+			#print(p["username"])
+			if (uname == p["username"]) and (int(pwd) == p["password"]):
+				
+				print("sucessfully login")
+				self.redirect("/chat")
+				
+				#self.set_cookie("username",uname)
+			else:
+				print("not valid Email password")
+		

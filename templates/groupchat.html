@@ -2,17 +2,24 @@
 <head>
 	<title>Groupchat</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/groupchat.css">
+	<script src='../static/js/jquery-3.1.1.js'></script>
+	<script src="../static/js/chat.js"></script>
+	
+  	
+
+
+
 	
 </head>
 <body>
-
+	
 	<div id="headChat">
 		<div id="convType">
 			<a href="" id="Home">Home</a> &ensp; <a href="" id="Groups" style="color:#f7ab38">Groups </a> &ensp; <a href="people.html"id="people">People </a>
 		</div>
 		<div id="user">
 			<div id="uImg">
-			<img id="userImg" src="../static/img/penguino.png">
+			<img id="userImg" src="../static/img/penguino.png"/>
 			</div>
 			<div id="uName">
 			<p id="userName"> Engineer Penguino</p>
@@ -22,16 +29,19 @@
 
 	<div id="chatContainer">
 		<div id="groupInfo">
-			<img id="gpImg" src="../static/img/penguino.png">
+			<img id="gpImg" src="../static/img/penguino.png"/>
 			<font id="gpName"> Group1</font>
 			<a href="leaveGp">Leave Group</a>
 			
 		</div>
 		<div id="chatBody">
-			<input type="text" id="chatContent" readonly>
-			<div id="onlineContacts">	
-				<p id="onConts"> Online Contacts</p>
+				<div id="onlineContacts">	
+					<p id="onConts"> Online Contacts</p>
+				</div>
+			<div id="chatContent">
+				
 			</div>
+				
 		</div>
 
 		<div id="textInput">

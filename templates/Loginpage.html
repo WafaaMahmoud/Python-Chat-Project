@@ -17,12 +17,13 @@
       <div class="formholder">
         <div class="randompad">
            <fieldset>
-             <label name="email">Email</label>
-             <input type="email" value="example@example.com" id="username"/>
+           <form method="post" action="/log">
+             <label name="text">Username</label>
+             <input type="text" name="username"/>
              <label name="password">Password</label>
-             <input type="password" id="pwd"/>
+             <input type="password" name="pwd"/>
              <input type="submit" value="Login" id="log"/>
- 
+ 			</form>
            </fieldset>
         </div>
       </div>
@@ -34,6 +35,7 @@
       <div class="formholder">
         <div class="randompad">
            <fieldset>
+           <form>
             <label name="username">Username</label>
              <input type="email" value="" />
              <label name="email">Email</label>
@@ -41,7 +43,7 @@
              <label name="password">Password</label>
              <input type="password" />
              <input type="submit" value="Register" />
- 
+ 			</form>
            </fieldset>
         </div>
       </div>
