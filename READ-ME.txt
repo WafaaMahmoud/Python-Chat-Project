@@ -1,0 +1,26 @@
+Team Members:
+
+1-Doha Essam
+2-Dina Ibrahim
+3-Mariam Gamal
+4-Omar Saber
+5-Wafaa Mahmoud 
+
+
+How it works?
+
+1)run mongod command to open mong server
+2)run main.py
+3)run localhost:8888
+4)/log for login page
+5)/signup for signup page
+6)/people for page that have ur friends and others
+7)/group for page that have ur groups and others
+8)/chat for chat page 
+
+how to start using it?
+
+1)signup to be a user
+2)signin to the website 
+3)start movin between pages and just chat 
+4)have fun :D :D 

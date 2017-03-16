@@ -1,11 +1,11 @@
 from tornado import web,ioloop
 from handlers.ajax import APIHandler
 from handlers.sse import EventHandler,SSEHandler
-from handlers.login import ChatHandler,WSHandler,Login
+from handlers.login import ChatHandler,WSHandler,Login,gChatHandler,WSHandlerP
 from handlers.people import people
 from handlers.signup import signup
 from handlers.group import group
-from handlers.homepage import homepage
+#from handlers.homepage import homepage
 
 
 class MainHandler(web.RequestHandler):
@@ -18,6 +18,8 @@ app = web.Application([
         (r"/sse", SSEHandler),
         (r"/event", EventHandler),
         (r"/chat", ChatHandler),
+        (r"/pchat", WSHandlerP),
+        (r"/gchat", gChatHandler),
         (r"/log", Login),
         (r"/signup", signup),
         (r"/people", people),

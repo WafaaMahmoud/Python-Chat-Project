@@ -6,7 +6,11 @@ $(function(){
 
 
 	webSocket= new WebSocket("ws://localhost:8888/ws");
-
+	// webSocket.onopen = function(e){
+	// 	//var msg = {code:0,uid:$("#group-id").val()}
+	// 	this.send()
+    //
+	// }
 	webSocket.onmessage = function(e){
 		console.log(e.data)
 		$("#chatContent").append("</br>"+e.data+"</br>")
